@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://difeycckbaolf"]
+[gd_scene load_steps=5 format=3 uid="uid://bxl4apywxrb1o"]
 
-[ext_resource type="Script" path="res://scripts/items/item_7.gd" id="1_ydy02"]
-[ext_resource type="Script" path="res://scripts/resources/item_resource/item_res.gd" id="2_1cvmo"]
-[ext_resource type="Texture2D" uid="uid://b0weqvc0fnwvb" path="res://assets/terraria/Item_7.png" id="2_1inx0"]
+[ext_resource type="Script" path="res://scripts/items/item_28.gd" id="1_wvdyt"]
+[ext_resource type="Texture2D" uid="uid://dhf1spctl2vch" path="res://assets/terraria/Item_28.png" id="2_4eooj"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource/item_res.gd" id="2_xp0t3"]
 
-[sub_resource type="Resource" id="Resource_mtp8o"]
-script = ExtResource("2_1cvmo")
+[sub_resource type="Resource" id="Resource_qjblc"]
+script = ExtResource("2_xp0t3")
 id = 0
 is_comsumable = false
 max_stack_count = 9999
@@ -42,9 +42,9 @@ is_hammer = 0
 is_bomb = false
 blast_radius = 0
 
-[node name="Item7" type="Node2D"]
-script = ExtResource("1_ydy02")
-item_res = SubResource("Resource_mtp8o")
+[node name="Item28" type="Node2D"]
+script = ExtResource("1_wvdyt")
+item_res = SubResource("Resource_qjblc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1inx0")
+texture = ExtResource("2_4eooj")

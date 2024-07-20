@@ -2,7 +2,8 @@
 
 extends Node2D
 
-@onready var item_node: ItemNode = $ItemNode
+@export var item_res: ItemRes
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:

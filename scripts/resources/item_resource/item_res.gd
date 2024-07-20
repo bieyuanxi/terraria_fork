@@ -6,7 +6,7 @@ class_name ItemRes
 
 @export var is_comsumable: bool = false		# 消耗品，使用后数量-1
 
-@export var max_stack_count: int = 9999		# 最大堆叠层数
+@export_range(1, 9999) var max_stack_count: int = 9999		# 最大堆叠层数
 
 @export var value: int	# coins
 

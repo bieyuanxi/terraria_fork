@@ -1,4 +1,4 @@
-@icon("res://assets/terraria/Item_4.png")
+@icon("res://assets/terraria/Item_15.png")
 extends Node2D
 
 @export var item_res: ItemRes
