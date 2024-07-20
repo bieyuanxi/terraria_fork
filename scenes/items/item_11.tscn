@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://1xuh16i4k1q3"]
+
+[ext_resource type="Script" path="res://scripts/items/item_11.gd" id="1_j7xkp"]
+[ext_resource type="Texture2D" uid="uid://cy1xpepnq0133" path="res://assets/terraria/Item_11.png" id="2_uuxdv"]
+[ext_resource type="Script" path="res://scripts/item_node.gd" id="3_t6qnd"]
+
+[node name="Item11" type="Node2D"]
+script = ExtResource("1_j7xkp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uuxdv")
+
+[node name="ItemNode" type="Node" parent="."]
+script = ExtResource("3_t6qnd")

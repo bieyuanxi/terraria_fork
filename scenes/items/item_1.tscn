@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdx2ex2jfc3qj"]
+
+[ext_resource type="Script" path="res://scripts/items/item_1.gd" id="1_vybee"]
+[ext_resource type="Texture2D" uid="uid://cx678rftpju0a" path="res://assets/terraria/Item_1.png" id="2_1q08v"]
+[ext_resource type="PackedScene" uid="uid://b02oivgs3ne0n" path="res://scenes/item_node.tscn" id="3_dbf2j"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource/item_res.gd" id="4_d6kol"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource/potion_res.gd" id="4_ylhxc"]
+
+[sub_resource type="Resource" id="Resource_et40w"]
+script = ExtResource("4_ylhxc")
+duration = 0
+interval_to_use = 0
+heal_life = 0
+heal_mana = 0
+life_regen_rate = 0.0
+mana_regen_rate = 0.0
+move_speed_rate = 0.0
+take_effect = Callable()
+
+[sub_resource type="Resource" id="Resource_23pnl"]
+script = ExtResource("4_d6kol")
+id = 0
+is_comsumable = false
+max_stack_count = 9999
+value = 0
+level = 0
+can_be_destroyed_by_magma = false
+is_weapon = 0
+damage = 0.0
+knock_back = 0.0
+crit = 0
+mana = 0
+use_ammo = 0
+shoot_speed = 0.0
+shoot_project_tile_id = 0
+use_time = 0.0
+use_interval = 0.0
+is_ammo = 0
+is_potion = SubResource("Resource_et40w")
+is_bait = false
+is_fishing_pole = false
+bait_power = 0
+is_defense = 0
+is_defense_reduce = 0
+is_defense_ignore = 0
+is_armor_penetration = 0
+is_armor = false
+is_vanity = false
+head = -1
+body = 0
+leg = -1
+is_accessory = false
+is_pick = 0
+is_axe = 0
+is_hammer = 0
+is_bomb = false
+blast_radius = 0
+
+[node name="Item1" type="Node2D"]
+script = ExtResource("1_vybee")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1q08v")
+
+[node name="ItemNode" parent="." instance=ExtResource("3_dbf2j")]
+item_res = SubResource("Resource_23pnl")

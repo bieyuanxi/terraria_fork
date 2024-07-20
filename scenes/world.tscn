@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl8sq87v84r5w"]
+
+[ext_resource type="PackedScene" uid="uid://cdx2ex2jfc3qj" path="res://scenes/items/item_1.tscn" id="1_t7rcs"]
+[ext_resource type="PackedScene" uid="uid://b02oivgs3ne0n" path="res://scenes/item_node.tscn" id="2_qtour"]
+[ext_resource type="Texture2D" uid="uid://cuwxe3kh3g5js" path="res://assets/terraria/Item_1024.png" id="3_qipsm"]
+
+[node name="World" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-2, 56)
+
+[node name="Item1" parent="Node2D" instance=ExtResource("1_t7rcs")]
+position = Vector2(99.125, 41.64)
+
+[node name="ItemNode" parent="Node2D" instance=ExtResource("2_qtour")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ItemNode"]
+position = Vector2(367, 161)
+texture = ExtResource("3_qipsm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
