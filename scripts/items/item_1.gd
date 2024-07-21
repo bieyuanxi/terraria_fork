@@ -11,5 +11,3 @@ func _ready() -> void:
 	#print(sprite_2d.texture.get_width())
 	#print(sprite_2d.texture.get_size())
 	pass
-	
-	

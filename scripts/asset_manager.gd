@@ -5,9 +5,9 @@ class_name AssetManager
 func _init() -> void:
 	#for index in range(0, ItemID.ID.Count):
 		##item_resources.insert()
-		#var res = 
+		#var res =
 		#item_resources.get_or_add(index, load_item_by_id(index))
-		
+
 		pass
 
 static func load_item_by_id(item_id: ItemID.ID) -> ItemRes:
