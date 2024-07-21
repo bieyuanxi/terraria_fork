@@ -2,7 +2,14 @@ extends Resource
 
 class_name ItemRes
 
-@export var id: ItemID.ID = ItemID.ID.None
+# 会导致编辑器出现显著卡顿，可能是枚举列表太长导致的。
+# 可能的替代方案：
+#	1. 使用纯数字id（失去可读性）
+#	2. 枚举改成static或const（失去枚举能力，工作量rework）
+#	3. 不使用@export, 使用@export_storage（失去编辑器中指定id的能力，需要在代码中指定）
+#	4. 不在资源中标记所属id，由外部负责标记该资源所属id（失去从资源直接获得item_id的能力，可能简化新物品添加的流程）
+#@export var id: ItemID.ID = ItemID.ID.None
+#@export_storage var id: ItemID.ID = ItemID.ID.None
 
 @export var is_comsumable: bool = false		# 消耗品，使用后数量-1
 

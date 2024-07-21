@@ -16,7 +16,6 @@ take_effect = Callable()
 
 [resource]
 script = ExtResource("2_cyntr")
-id = 0
 is_comsumable = false
 max_stack_count = 9999
 value = 0

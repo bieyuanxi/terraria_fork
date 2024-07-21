@@ -6,7 +6,6 @@
 
 [sub_resource type="Resource" id="Resource_cmmuq"]
 script = ExtResource("2_qt7k3")
-id = 0
 is_comsumable = false
 max_stack_count = 9999
 value = 0
