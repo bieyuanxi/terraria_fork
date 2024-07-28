@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://drs8c7dwiqppr"]
+
+[ext_resource type="Texture2D" uid="uid://q0p10o2hswlb" path="res://assets/terraria/Item_0.png" id="1_sqkyc"]
+[ext_resource type="Script" path="res://scenes/items/item_0.gd" id="2_bt5q0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fitkk"]
+atlas = ExtResource("1_sqkyc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah6a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fitkk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Item0" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ah6a6")
+script = ExtResource("2_bt5q0")

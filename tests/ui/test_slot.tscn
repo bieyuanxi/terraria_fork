@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b43m280x1uqyp"]
+
+[ext_resource type="Script" path="res://tests/ui/test_slot.gd" id="1_j88br"]
+[ext_resource type="PackedScene" uid="uid://b4dccek7oxckx" path="res://scenes/UI/slot.tscn" id="2_hx8qx"]
+
+[node name="TestSlot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j88br")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+
+[node name="Slot" parent="GridContainer" instance=ExtResource("2_hx8qx")]
+layout_mode = 2
+
+[node name="Slot2" parent="GridContainer" instance=ExtResource("2_hx8qx")]
+layout_mode = 2
+number = "9"
+
+[node name="Slot3" parent="GridContainer" instance=ExtResource("2_hx8qx")]
+layout_mode = 2
+
+[node name="Slot4" parent="GridContainer" instance=ExtResource("2_hx8qx")]
+layout_mode = 2
+
+[node name="Slot5" parent="GridContainer" instance=ExtResource("2_hx8qx")]
+layout_mode = 2

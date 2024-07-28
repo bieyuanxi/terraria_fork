@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://c34cbcqs8jwum"]
+
+[ext_resource type="Texture2D" uid="uid://d4lbv3oq0x48n" path="res://assets/terraria/Item_520.png" id="1_1nhfs"]
+[ext_resource type="Script" path="res://scenes/items/item_520.gd" id="2_d4o4o"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource/item_data_res.gd" id="3_qp4eo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt8f4"]
+atlas = ExtResource("1_1nhfs")
+region = Rect2(0, 0, 22, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fveg"]
+atlas = ExtResource("1_1nhfs")
+region = Rect2(0, 28, 22, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab2d1"]
+atlas = ExtResource("1_1nhfs")
+region = Rect2(0, 56, 22, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybx1b"]
+atlas = ExtResource("1_1nhfs")
+region = Rect2(0, 84, 22, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sj2j8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt8f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fveg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab2d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybx1b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_n71di"]
+script = ExtResource("3_qp4eo")
+is_comsumable = false
+max_stack_count = 9999
+value = 0
+level = 0
+can_be_destroyed_by_magma = false
+is_weapon = 0
+damage = 0.0
+knock_back = 0.0
+crit = 0
+mana = 0
+use_ammo = 0
+shoot_speed = 0.0
+shoot_project_tile_id = 0
+use_time = 0.0
+use_interval = 0.0
+is_ammo = 0
+is_bait = false
+is_fishing_pole = false
+bait_power = 0
+is_defense = 0
+is_defense_reduce = 0
+is_defense_ignore = 0
+is_armor_penetration = 0
+is_armor = false
+is_vanity = false
+head = -1
+body = -1
+leg = -1
+is_accessory = false
+is_pick = 0
+is_axe = 0
+is_hammer = 0
+is_bomb = false
+blast_radius = 0
+
+[node name="Item520" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_sj2j8")
+script = ExtResource("2_d4o4o")
+item_data = SubResource("Resource_n71di")
+sprite_size = Vector2(22, 28)

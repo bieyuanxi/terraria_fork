@@ -1,0 +1,122 @@
+[gd_scene load_steps=18 format=3 uid="uid://bo5nkvcjun6ur"]
+
+[ext_resource type="Texture2D" uid="uid://daxj3nmpk0dam" path="res://assets/terraria/TownNPCs/SlimeCopper_Default.png" id="1_dbcg8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fxd5"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 0, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nis5r"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 38, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehils"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 76, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5er2t"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 114, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xncub"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 152, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkfa8"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 190, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oamof"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 228, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24esb"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 266, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3skhh"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 304, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68c4e"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 342, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhadq"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 380, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mbdw"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 418, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_563bc"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 456, 72, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki5jy"]
+atlas = ExtResource("1_dbcg8")
+region = Rect2(0, 494, 72, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sra6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fxd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nis5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehils")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5er2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xncub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkfa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oamof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24esb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3skhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68c4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhadq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mbdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_563bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki5jy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdupc"]
+size = Vector2(28, 26)
+
+[node name="SlimeCopperDefault" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_sra6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_qdupc")

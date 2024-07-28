@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbvbv620t01lf"]
+
+[ext_resource type="Texture2D" uid="uid://crd4pr6qc57os" path="res://assets/terraria/Item_426.png" id="1_vr17m"]
+[ext_resource type="Script" path="res://scenes/items/item_426.gd" id="1_w8lru"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource/item_data_res.gd" id="2_emqca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy2s3"]
+atlas = ExtResource("1_vr17m")
+region = Rect2(0, 0, 80, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5n7d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy2s3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_d25qj"]
+script = ExtResource("2_emqca")
+is_comsumable = false
+max_stack_count = 9999
+value = 0
+level = 0
+can_be_destroyed_by_magma = false
+is_weapon = 0
+damage = 0.0
+knock_back = 0.0
+crit = 0
+mana = 0
+use_ammo = 0
+shoot_speed = 0.0
+shoot_project_tile_id = 0
+use_time = 0.0
+use_interval = 0.0
+is_ammo = 0
+is_bait = false
+is_fishing_pole = false
+bait_power = 0
+is_defense = 0
+is_defense_reduce = 0
+is_defense_ignore = 0
+is_armor_penetration = 0
+is_armor = false
+is_vanity = false
+head = -1
+body = -1
+leg = -1
+is_accessory = false
+is_pick = 0
+is_axe = 0
+is_hammer = 0
+is_bomb = false
+blast_radius = 0
+
+[node name="Item426" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5n7d7")
+script = ExtResource("1_w8lru")
+item_data = SubResource("Resource_d25qj")
+sprite_size = Vector2(80, 92)

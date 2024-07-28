@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdx2ex2jfc3qj"]
+[gd_scene load_steps=5 format=3 uid="uid://dkayraqadp1de"]
 
-[ext_resource type="Script" path="res://scripts/items/item_1.gd" id="1_vybee"]
 [ext_resource type="Texture2D" uid="uid://cx678rftpju0a" path="res://assets/terraria/Item_1.png" id="2_1q08v"]
-[ext_resource type="Resource" uid="uid://s5ofpfb8r3ph" path="res://assets/item_resources/item_1.tres" id="2_tr1fx"]
+[ext_resource type="Script" path="res://scenes/items/item_1.gd" id="2_uo6ca"]
 
-[node name="Item1" type="Node2D"]
-script = ExtResource("1_vybee")
-item_res = ExtResource("2_tr1fx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkcbo"]
+atlas = ExtResource("2_1q08v")
+region = Rect2(0, 0, 32, 32)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1q08v")
+[sub_resource type="SpriteFrames" id="SpriteFrames_klth7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkcbo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Item1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_klth7")
+script = ExtResource("2_uo6ca")

@@ -1,12 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfbsaesc5fsmg"]
+[gd_scene load_steps=7 format=3 uid="uid://ckkevc5c8k7ul"]
 
-[ext_resource type="Script" path="res://scripts/items/item_8.gd" id="1_kfw5n"]
-[ext_resource type="Texture2D" uid="uid://df1ywilda85ae" path="res://assets/terraria/Item_8.png" id="2_f3nwn"]
-[ext_resource type="Script" path="res://scripts/resources/item_resource/item_res.gd" id="2_ksf1r"]
+[ext_resource type="Texture2D" uid="uid://df1ywilda85ae" path="res://assets/terraria/Item_8.png" id="1_vgrpn"]
+[ext_resource type="Script" path="res://scenes/items/item_8.gd" id="2_wyn2j"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource/item_data_res.gd" id="3_gv3vn"]
 
-[sub_resource type="Resource" id="Resource_4ine1"]
-script = ExtResource("2_ksf1r")
-id = 0
+[sub_resource type="AtlasTexture" id="AtlasTexture_40dfj"]
+atlas = ExtResource("1_vgrpn")
+region = Rect2(0, 0, 14, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcvyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40dfj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_u1rp1"]
+script = ExtResource("3_gv3vn")
 is_comsumable = false
 max_stack_count = 9999
 value = 0
@@ -42,9 +56,8 @@ is_hammer = 0
 is_bomb = false
 blast_radius = 0
 
-[node name="Item8" type="Node2D"]
-script = ExtResource("1_kfw5n")
-item_res = SubResource("Resource_4ine1")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_f3nwn")
+[node name="Item8" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hcvyw")
+script = ExtResource("2_wyn2j")
+item_data = SubResource("Resource_u1rp1")
+sprite_size = Vector2(14, 16)

@@ -1,6 +1,9 @@
+extends Resource
+
 class_name Inventory
 
-var inner: Array[Variant] = []
+
+@export_storage var inner: Array[Variant] = []
 
 
 
@@ -23,11 +26,18 @@ func filter(method: Callable) -> Array[Variant]:
 	return inner.filter(method)
 
 
-func take(index: int) -> Variant:
-	var val = inner[index]
-	inner[index] = null
-	return val
+func is_empty(index: int):
+	return inner[index] == null
 
+
+func take(index: int) -> Variant:
+	return replace(index, null)
+
+
+func replace(index: int, val: Variant) -> Variant:
+	var old = inner[index]
+	inner[index] = val
+	return old
 
 # TODO:
 # 1. sort inventory, use sort()

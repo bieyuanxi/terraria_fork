@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bg0ttj4s2vwge"]
+
+[ext_resource type="Texture2D" uid="uid://cyxp127n056tm" path="res://assets/terraria/Item_4722.png" id="1_65pt3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_65pt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

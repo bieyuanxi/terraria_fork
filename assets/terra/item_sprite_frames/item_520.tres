@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bc54sciyxu7mm"]
+
+[ext_resource type="Texture2D" uid="uid://d4lbv3oq0x48n" path="res://assets/terraria/Item_520.png" id="1_o1k8l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dlu1"]
+atlas = ExtResource("1_o1k8l")
+region = Rect2(0, 0, 22, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3g61"]
+atlas = ExtResource("1_o1k8l")
+region = Rect2(0, 28, 22, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjrio"]
+atlas = ExtResource("1_o1k8l")
+region = Rect2(0, 56, 22, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cot35"]
+atlas = ExtResource("1_o1k8l")
+region = Rect2(0, 84, 22, 28)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dlu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3g61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjrio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cot35")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
