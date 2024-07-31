@@ -5,6 +5,7 @@ const SLOT_COUNTS := 50
 
 
 @onready var item_slots: GridContainer = $ItemSlots
+@onready var item_with_details: Control = $PanelContainer/ItemWithDetails
 
 
 var player_data: PlayerData = GameWorld.player
@@ -13,9 +14,6 @@ var item_slots_dict = {}
 
 
 func _ready() -> void:
-	## TODO: 为BG动态生成，且前10个使用不同颜色+标号
-	##
-
 	for i in range(SLOT_COUNTS):
 		var slot: Slot = SLOT_SCENE.instantiate()
 		if i < 10:
@@ -28,6 +26,9 @@ func _ready() -> void:
 
 	player_data.inventory_changed.connect(_on_player_data_inventory_changed)
 
+
+func _process(delta: float) -> void:
+	item_with_details.position = get_local_mouse_position()
 
 func _on_player_data_inventory_changed(inventory: Inventory) -> void:
 	for i in range(inventory.size()):

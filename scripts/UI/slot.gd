@@ -9,11 +9,15 @@ const TEXTURE_INVENTORY_BACK_9 := preload("res://assets/terraria/Inventory_Back9
 @export var number := ""
 
 signal pressed(source: Slot)
+#signal mouse_entered(source: Slot)
+#signal mouse_exited(source: Slot)
+
 
 @onready var item_container: Control = $ItemContainer
 @onready var quantity_label: Label = $QuantityLabel
 @onready var number_label: Label = $NumberLabel
 
+var is_mouse_in_slot := false
 
 ## 缓存当前使用的物品id，只有新id与缓存id不同时才重新加载物品
 var cached_item_id = ItemID.ID.None:
@@ -69,12 +73,16 @@ func scale_item(item: Node2D, target_vec: Vector2):
 func _on_mouse_entered() -> void:
 	if cached_item_id != ItemID.ID.None:
 		print("弹出物品详细说明: id = {id}, quantity =  {quantity}".format({"id": cached_item_id, "quantity": quantity}))
+		print(get_local_mouse_position())
+		is_mouse_in_slot = true
 	pass # Replace with function body.
 
 
 func _on_mouse_exited() -> void:
+	print("exit")
 	if cached_item_id != ItemID.ID.None:
 		print("关闭物品详细说明")
+		is_mouse_in_slot = false
 
 
 func _on_gui_input(event: InputEvent) -> void:

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://booghwlu27iny"]
+
+[ext_resource type="Script" path="res://scripts/UI/item_with_details.gd" id="1_e41kp"]
+[ext_resource type="Texture2D" uid="uid://bcxglg317b2qo" path="res://assets/terraria/Inventory_Back9.png" id="2_2ni5u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca274"]
+texture = ExtResource("2_2ni5u")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="ItemWithDetails" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_e41kp")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 0
+offset_right = 478.0
+offset_bottom = 571.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ca274")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "掠夺鲨"
+
+[node name="Tips" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "近战武器"
+
+[node name="Data" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "76 近战伤害"
+
+[node name="Description" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "武器描述"
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ModInfo" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2

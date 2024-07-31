@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://duahtwrl0ppcq"]
+[gd_scene load_steps=3 format=3 uid="uid://duahtwrl0ppcq"]
 
 [ext_resource type="Script" path="res://scripts/UI/inventory_ui.gd" id="1_stlub"]
+[ext_resource type="PackedScene" uid="uid://booghwlu27iny" path="res://scenes/UI/item_with_details.tscn" id="2_sr3ay"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -20,3 +21,18 @@ offset_bottom = 111.0
 theme_override_constants/h_separation = 7
 theme_override_constants/v_separation = 7
 columns = 10
+
+[node name="ItemWithDetails" parent="." instance=ExtResource("2_sr3ay")]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "AAAAA"
