@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1bfv8atd11oh"]
+
+[ext_resource type="Texture2D" uid="uid://c3lnorf8o20ry" path="res://assets/terraria/UI/PlayerResourceSets/FancyClassic/Star_Fill.png" id="1_jd4b2"]
+
+[node name="ManaUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 303.0
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mana"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect5" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect6" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect7" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect8" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect9" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")
+
+[node name="TextureRect10" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_jd4b2")

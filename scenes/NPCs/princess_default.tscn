@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://dmgc1htp7gikl"]
 
-[ext_resource type="Texture2D" uid="uid://ij7wvfly6xf4" path="res://assets/terraria/TownNPCs/Princess_Default.png" id="1_gggli"]
+[ext_resource type="Texture2D" uid="uid://ce7ftg5q8t4ro" path="res://assets/terraria/TownNPCs/Princess_Default.png" id="1_gggli"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv4sq"]
 atlas = ExtResource("1_gggli")

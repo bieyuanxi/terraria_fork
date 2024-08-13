@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwpgva3q0ksmx"]
+
+[ext_resource type="Texture2D" uid="uid://cuve4vil5srxg" path="res://assets/terraria/UI/DisplaySlots_10.png" id="1_t76lr"]
+[ext_resource type="Texture2D" uid="uid://cdkq6po5h2xna" path="res://assets/terraria/UI/DisplaySlots_4.png" id="2_kslu5"]
+[ext_resource type="Texture2D" uid="uid://djjr16gigcp4p" path="res://assets/terraria/UI/DisplaySlots_7.png" id="3_3nufm"]
+[ext_resource type="Texture2D" uid="uid://dpdcjpkcptvra" path="res://assets/terraria/UI/DisplaySlots_2.png" id="3_6o7yb"]
+[ext_resource type="Texture2D" uid="uid://2bfo3djvvwyb" path="res://assets/terraria/UI/DisplaySlots_5.png" id="3_cxhle"]
+[ext_resource type="PackedScene" uid="uid://b4dccek7oxckx" path="res://scenes/UI/slot.tscn" id="6_aphhu"]
+[ext_resource type="Texture2D" uid="uid://bpew24n5u6kmn" path="res://assets/terraria/Extra_259.png" id="7_abe5i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiw52"]
+atlas = ExtResource("7_abe5i")
+region = Rect2(0, 0, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcket"]
+atlas = ExtResource("7_abe5i")
+region = Rect2(38, 0, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_086f3"]
+atlas = ExtResource("7_abe5i")
+region = Rect2(0, 34, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h5c3"]
+atlas = ExtResource("7_abe5i")
+region = Rect2(0, 68, 38, 34)
+
+[node name="WearingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 206.0
+offset_bottom = 256.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("1_t76lr")
+stretch_mode = 3
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("2_kslu5")
+texture_hover = ExtResource("3_cxhle")
+texture_focused = ExtResource("3_3nufm")
+stretch_mode = 3
+
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("3_6o7yb")
+stretch_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot4" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot5" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot6" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot4" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot5" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot6" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer2" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Slot" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot4" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot5" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="Slot6" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2/VBoxContainer3" instance=ExtResource("6_aphhu")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_fiw52")
+texture_pressed = SubResource("AtlasTexture_lcket")
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_086f3")
+
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_3h5c3")

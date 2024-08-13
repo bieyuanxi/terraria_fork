@@ -1,12 +1,23 @@
-extends Node
+#extends Node
 
 class_name PlayerData
 
 signal inventory_changed(inventory: Inventory)
 signal inventory_item_added(item_id: ItemID.ID, quantity: int)
 
+signal taken_damage(damage: int)
+signal hp_changed(new_hp: int)
+signal max_hp_changed(new_hp: int)
+
+signal mana_consumed(consume: int)
+signal mana_changed(new_mana: int)
+signal max_mana_changed(new_mana: int)
+
 signal dead
-signal respawn
+signal respawned
+
+const NEW_PLAYER_MAX_HP := 100
+const NEW_PLAYER_MAX_MANA := 20
 
 var inventory: Inventory = Inventory.with_capacity(50)
 
@@ -20,6 +31,20 @@ var vanity_inventory
 
 ## 鼠标点击拿取的物品
 var item_on_hand: Inventory = Inventory.with_capacity(1)
+
+## 直接设置此值不会触发taken_damage信号和dead信号
+var hp := NEW_PLAYER_MAX_HP:
+	set(val):
+		hp = val
+		hp_changed.emit(hp)
+		
+var max_hp := NEW_PLAYER_MAX_MANA:
+	set(val):
+		max_hp = val
+		max_hp_changed.emit(max_hp)
+
+var mana := NEW_PLAYER_MAX_MANA
+var max_mana := NEW_PLAYER_MAX_MANA
 
 class ItemSlot:
 	var id: ItemID.ID
@@ -69,6 +94,13 @@ class ItemSpawn:
 	func set_quantity(quantity: int) -> ItemSpawn:
 		self.quantity = quantity
 		return self
+
+
+func _init() -> void:
+	hp = 100
+	max_hp = 100
+	print("PlayerData init")
+
 
 ## 返回剩余的数量
 ## TODO: 目前限制quantity <= 9999, 改为遍历所有非空slot，新建item，直到完成或空间不足
@@ -145,3 +177,22 @@ func add_item_to(inventory: Inventory, item: ItemSpawn):
 			#quantity_from_world -= stack_count
 #
 	#return false
+
+
+## damage为实际受到的伤害值,防御等减伤应在调用此函数前结算
+func take_damage(damage: int):
+	hp -= damage
+	taken_damage.emit(damage)
+	
+	if hp <= 0:
+		dead.emit()
+
+
+func respawn():
+	reset()
+	respawned.emit()
+
+
+func reset():
+	hp = 100
+	max_hp = 100

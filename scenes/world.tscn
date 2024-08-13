@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=4 uid="uid://dl8sq87v84r5w"]
+[gd_scene load_steps=16 format=4 uid="uid://dl8sq87v84r5w"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_s1e1g"]
-[ext_resource type="Texture2D" uid="uid://c50n45y2aays1" path="res://assets/terraria/Tiles_0.png" id="4_mryvq"]
+[ext_resource type="Texture2D" uid="uid://dwm3q0bnyb3dg" path="res://assets/terraria/Tiles_0.png" id="4_mryvq"]
 [ext_resource type="PackedScene" uid="uid://duahtwrl0ppcq" path="res://scenes/UI/inventory_ui.tscn" id="4_nordh"]
 [ext_resource type="PackedScene" uid="uid://cf74qp018bwbb" path="res://scenes/console.tscn" id="4_q20x3"]
 [ext_resource type="PackedScene" uid="uid://dmgc1htp7gikl" path="res://scenes/NPCs/princess_default.tscn" id="5_342im"]
-[ext_resource type="Texture2D" uid="uid://bxnk0s3myf6g6" path="res://assets/terraria/Tiles_1.png" id="5_tta72"]
+[ext_resource type="Texture2D" uid="uid://b7i3bpkc2rlfs" path="res://assets/terraria/Tiles_1.png" id="5_tta72"]
+[ext_resource type="PackedScene" uid="uid://oxtfyn82ryhq" path="res://scenes/NPCs/nurse_default.tscn" id="6_pefl6"]
+[ext_resource type="PackedScene" uid="uid://bsy0uihm5chw" path="res://scenes/player/player.tscn" id="7_uuxhx"]
+[ext_resource type="PackedScene" uid="uid://bjfkpucemglrb" path="res://scenes/UI/heart_ui.tscn" id="8_k0x4r"]
+[ext_resource type="PackedScene" uid="uid://c1bfv8atd11oh" path="res://scenes/UI/mana_ui.tscn" id="9_ql0vu"]
+[ext_resource type="PackedScene" uid="uid://bwd7h6ga2fifm" path="res://scenes/UI/hand_inventory_ui.tscn" id="10_h2da8"]
+[ext_resource type="Texture2D" uid="uid://c2y1hpawx61fg" path="res://assets/terraria/Background_100.png" id="11_6e412"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cq1cw"]
 texture = ExtResource("4_mryvq")
@@ -758,22 +764,54 @@ script = ExtResource("1_s1e1g")
 [node name="Console" parent="." instance=ExtResource("4_q20x3")]
 
 [node name="TilesLayer" type="TileMapLayer" parent="."]
+position = Vector2(647, 508)
 tile_map_data = PackedByteArray("AAAMABEAAAAAAAAAAAANABEAAAAAAAAAAAAOABEAAAAAAAAAAAAPABEAAAAAAAAAAAAQABEAAAAAAAAAAAAQABAAAAAAAAAAAAARABAAAAAAAAAAAAASABAAAAAAAAAAAAATABAAAAAAAAAAAAAUABAAAAAAAAAAAAAVABAAAAAAAAAAAAAVABEAAAAAAAAAAAAWABEAAAAAAAAAAAAYABAAAAAAAAAAAAAZAA8AAAAAAAAAAAAZABAAAAAAAAAAAAAaABAAAAAAAAAAAAAbABAAAAAAAAAAAAAcABAAAAAAAAAAAAAdABAAAAAAAAAAAAAeABAAAAAAAAAAAAAfABEAAAAAAAAAAAAgABEAAAAAAAAAAAAgABIAAAAAAAAAAAAfABIAAAAAAAAAAAAeABIAAAAAAAAAAAAeABMAAAAAAAAAAAAdABMAAAAAAAAAAAAcABMAAAAAAAAAAAAbABMAAAAAAAAAAAAaABMAAAAAAAAAAAAZABQAAAAAAAAAAAAYABQAAAAAAAAAAAAXABQAAAAAAAAAAAAWABQAAAAAAAAAAAAVABQAAAAAAAAAAAAUABQAAAAAAAAAAAATABQAAAAAAAAAAAASABQAAAAAAAAAAAARABQAAAAAAAAAAAAQABQAAAAAAAAAAAAPABQAAAAAAAAAAAAOABQAAAAAAAAAAAANABQAAAAAAAAAAAAQABUAAAAAAAAAAAARABUAAAAAAAAAAAASABUAAAAAAAAAAAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAWABUAAAAAAAAAAAAXABYAAAAAAAAAAAAPABgAAAAAAAAAAAAQABgAAAAAAAAAAAARABgAAAAAAAAAAAASABgAAAAAAAAAAAATABgAAAAAAAAAAAAUABgAAAAAAAAAAAAVABgAAAAAAAAAAAAWABgAAAAAAAAAAAAXABgAAAAAAAAAAAAYABgAAAAAAAAAAAAZABgAAAAAAAAAAAAaABgAAAAAAAAAAAAaABcAAAAAAAAAAAAbABcAAAAAAAAAAAAcABcAAAAAAAAAAAAcABYAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAeABUAAAAAAAAAAAAfABUAAAAAAAAAAAAfABYAAAAAAAAAAAAgABYAAAAAAAAAAAAgABUAAAAAAAAAAAAhABUAAAAAAAAAAAAiABUAAAAAAAAAAAAiABQAAAAAAAAAAAAiABMAAAAAAAAAAAAiABIAAAAAAAAAAAAhABIAAAAAAAAAAAAhABEAAAAAAAAAAAAhABAAAAAAAAAAAAAhAA8AAAAAAAAAAAAgAA8AAAAAAAAAAAAfAA8AAAAAAAAAAAAeAA8AAAAAAAAAAAAdAA8AAAAAAAAAAAAcAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAXABAAAAAAAAAAAAAWABAAAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAATAA8AAAAAAAAAAAASAA8AAAAAAAAAAAARAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAAOABAAAAAAAAAAAAANABAAAAAAAAAAAAAMABAAAAAAAAAAAAALABEAAAAAAAAAAAAPABAAAAAAAAAAAAAMAA4AAAADAAIAAAAMAA0AAAADAAIAAAAMAAwAAAADAAIAAAAMAAsAAAADAAIAAAAMAAoAAAADAAIAAAALAAoAAAADAAIAAAALAAkAAAADAAIAAAALAAgAAAADAAIAAAALAAcAAAADAAIAAAALAAYAAAADAAIAAAALAAUAAAADAAIAAAALAAQAAAADAAIAAAALAAMAAAADAAIAAAALAAIAAAADAAIAAAALAAEAAAADAAIAAAALAAAAAAADAAIAAAALAP//AAADAAIAAAALAP7/AAADAAIAAAALAP3/AAADAAIAAAALAPz/AAADAAIAAAA=")
 tile_set = SubResource("TileSet_3i4bw")
 
 [node name="NPC" type="Node2D" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="NPC"]
+position = Vector2(960, 540)
 
 [node name="PrincessDefault" parent="NPC" instance=ExtResource("5_342im")]
 position = Vector2(64, 2)
 
+[node name="NurseDefault" parent="NPC" instance=ExtResource("6_pefl6")]
+
+[node name="Player" parent="NPC" instance=ExtResource("7_uuxhx")]
+
+[node name="Camera2D" type="Camera2D" parent="NPC/Player"]
+
 [node name="Timer" type="Timer" parent="."]
-one_shot = true
 autostart = true
 
 [node name="GameUI" type="CanvasLayer" parent="."]
 
+[node name="HeartUI" parent="GameUI" instance=ExtResource("8_k0x4r")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 648.0
+offset_right = 904.0
+offset_bottom = 75.0
+grow_horizontal = 2
+
+[node name="ManaUI" parent="GameUI" instance=ExtResource("9_ql0vu")]
+offset_left = 1857.0
+offset_right = 1857.0
+
 [node name="InventoryUI" parent="GameUI" instance=ExtResource("4_nordh")]
-offset_right = 0.0
-offset_bottom = 0.0
+visible = false
+
+[node name="HandInventoryUI" parent="GameUI" instance=ExtResource("10_h2da8")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(963, 533)
+scale = Vector2(2, 2)
+texture = ExtResource("11_6e412")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,3 +1,4 @@
+@tool
 extends TextureRect
 
 class_name Slot
@@ -79,7 +80,7 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	print("exit")
+	#print("exit")
 	if cached_item_id != ItemID.ID.None:
 		print("关闭物品详细说明")
 		is_mouse_in_slot = false

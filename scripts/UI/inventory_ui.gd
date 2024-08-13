@@ -1,11 +1,10 @@
 extends Control
 
 const SLOT_SCENE = preload("res://scenes/UI/slot.tscn")
-const SLOT_COUNTS := 50
 
 
 @onready var item_slots: GridContainer = $ItemSlots
-@onready var item_with_details: Control = $PanelContainer/ItemWithDetails
+@onready var item_detail_card: PanelContainer = $ItemDetailCard
 
 
 var player_data: PlayerData = GameWorld.player
@@ -14,21 +13,27 @@ var item_slots_dict = {}
 
 
 func _ready() -> void:
-	for i in range(SLOT_COUNTS):
-		var slot: Slot = SLOT_SCENE.instantiate()
-		if i < 10:
-			slot.texture = slot.TEXTURE_INVENTORY_BACK_9
-			slot.number = str((i + 1) % 10)
-
+	var i = 0
+	for slot: Slot in item_slots.get_children():
 		slot.pressed.connect(_on_slot_clicked)
-		item_slots.add_child(slot)
+		slot.mouse_entered.connect(_on_slot_mouse_entered)
+		slot.mouse_exited.connect(_on_slot_mouse_exited)
+
 		item_slots_dict.get_or_add(slot, i)
+		i += 1
 
 	player_data.inventory_changed.connect(_on_player_data_inventory_changed)
 
 
 func _process(delta: float) -> void:
-	item_with_details.position = get_local_mouse_position()
+	## FIXME: 可能会超出屏幕外
+	item_detail_card.position = get_local_mouse_position()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_text_clear_carets_and_selection"):
+		self.visible = not self.visible
+
 
 func _on_player_data_inventory_changed(inventory: Inventory) -> void:
 	for i in range(inventory.size()):
@@ -43,3 +48,14 @@ func _on_player_data_inventory_changed(inventory: Inventory) -> void:
 
 func _on_slot_clicked(slot: Slot):
 	player_data.remove_item_from_inventory(item_slots_dict.get(slot))
+
+func _on_slot_mouse_entered():
+	item_detail_card.show()
+	
+func _on_slot_mouse_exited():
+	item_detail_card.hide()
+
+
+func _on_settings_button_pressed() -> void:
+	print("Settings button pressed")
+	pass # Replace with function body.

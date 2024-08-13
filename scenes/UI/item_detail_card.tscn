@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvaxocn5ijwah"]
+
+[ext_resource type="Script" path="res://scripts/UI/item_detail_card.gd" id="1_jpp6s"]
+[ext_resource type="Texture2D" uid="uid://bs420kf6ndycd" path="res://assets/terraria/Inventory_Back9.png" id="2_bcxrc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnv16"]
+texture = ExtResource("2_bcxrc")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="ItemDetailCard" type="PanelContainer"]
+offset_right = 121.0
+offset_bottom = 175.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wnv16")
+script = ExtResource("1_jpp6s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=red]传奇[/color] 第一分型
+100 近战伤害
+快速度
+
+\"未实现的武器\""
+fit_content = true
