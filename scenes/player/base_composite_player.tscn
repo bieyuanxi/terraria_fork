@@ -1,0 +1,119 @@
+[gd_scene load_steps=20 format=3 uid="uid://bl8ppmycwn22d"]
+
+[ext_resource type="Texture2D" uid="uid://bmt47hrcarqcx" path="res://assets/terraria/Player_0_0.png" id="1_h3xag"]
+[ext_resource type="Texture2D" uid="uid://dcxnp08qjyjwl" path="res://assets/terraria/Player_Hair_100.png" id="2_lj8xq"]
+[ext_resource type="Texture2D" uid="uid://0bes7xrxa057" path="res://assets/terraria/Player_0_1.png" id="3_gr4va"]
+[ext_resource type="Texture2D" uid="uid://tdr6w28xgpdq" path="res://assets/terraria/Player_0_2.png" id="4_xxqq2"]
+[ext_resource type="Texture2D" uid="uid://1kugbjso8vqr" path="res://assets/terraria/Player_0_3.png" id="5_fg33q"]
+[ext_resource type="Texture2D" uid="uid://vdlrmddi4foa" path="res://assets/terraria/Player_0_6.png" id="6_46dlm"]
+[ext_resource type="Texture2D" uid="uid://buydxpbv221iw" path="res://assets/terraria/Player_0_5.png" id="7_c4rxs"]
+[ext_resource type="Texture2D" uid="uid://c7iorovspo1d6" path="res://assets/terraria/Player_0_4.png" id="8_0oby0"]
+[ext_resource type="Texture2D" uid="uid://cfk2yu40ur8al" path="res://assets/terraria/Player_0_7.png" id="9_q7r8h"]
+[ext_resource type="Texture2D" uid="uid://b8cftkmg60kp1" path="res://assets/terraria/Player_0_8.png" id="10_syh7l"]
+[ext_resource type="Texture2D" uid="uid://ccrukpaph4alv" path="res://assets/terraria/Player_0_9.png" id="11_5vqxm"]
+[ext_resource type="Texture2D" uid="uid://bfitobkay7tv4" path="res://assets/terraria/Player_0_10.png" id="12_d560t"]
+[ext_resource type="Texture2D" uid="uid://behcvpcvpmrqb" path="res://assets/terraria/Player_0_11.png" id="13_s836t"]
+[ext_resource type="Texture2D" uid="uid://dyqrk1mmhumkh" path="res://assets/terraria/Player_0_12.png" id="14_d5yhx"]
+[ext_resource type="Texture2D" uid="uid://bonv53uj8lphm" path="res://assets/terraria/Player_0_13.png" id="15_0rqhp"]
+[ext_resource type="Texture2D" uid="uid://hx3icd6qwm58" path="res://assets/terraria/Player_0_15.png" id="16_iqsdw"]
+
+[sub_resource type="Animation" id="Animation_f3woe"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_vsqkv"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bphmm"]
+_data = {
+"RESET": SubResource("Animation_f3woe"),
+"new_animation": SubResource("Animation_vsqkv")
+}
+
+[node name="BaseCompositePlayer" type="Node2D"]
+
+[node name="Head" type="Sprite2D" parent="."]
+texture = ExtResource("1_h3xag")
+offset = Vector2(0, -2)
+vframes = 20
+frame = 19
+
+[node name="Hair" type="Sprite2D" parent="."]
+texture = ExtResource("2_lj8xq")
+vframes = 14
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bphmm")
+}
+
+[node name="Player_0_1" type="Sprite2D" parent="."]
+texture = ExtResource("3_gr4va")
+vframes = 20
+
+[node name="Player_0_2" type="Sprite2D" parent="."]
+texture = ExtResource("4_xxqq2")
+vframes = 20
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Player_0_3" type="Sprite2D" parent="Node2D2"]
+texture = ExtResource("5_fg33q")
+hframes = 9
+vframes = 4
+
+[node name="Player_0_6" type="Sprite2D" parent="Node2D2"]
+texture = ExtResource("6_46dlm")
+hframes = 9
+vframes = 4
+
+[node name="Player_0_5" type="Sprite2D" parent="."]
+texture = ExtResource("7_c4rxs")
+hframes = 9
+vframes = 4
+frame = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player_0_4" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("8_0oby0")
+hframes = 9
+vframes = 4
+frame = 2
+
+[node name="Player_0_7" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("9_q7r8h")
+hframes = 9
+vframes = 4
+frame = 2
+
+[node name="Player_0_8" type="Sprite2D" parent="."]
+texture = ExtResource("10_syh7l")
+hframes = 9
+vframes = 4
+
+[node name="Player_0_9" type="Sprite2D" parent="."]
+texture = ExtResource("11_5vqxm")
+hframes = 9
+vframes = 4
+frame = 7
+
+[node name="Player_0_10" type="Sprite2D" parent="."]
+texture = ExtResource("12_d560t")
+vframes = 20
+
+[node name="Player_0_11" type="Sprite2D" parent="."]
+texture = ExtResource("13_s836t")
+vframes = 20
+
+[node name="Player_0_12" type="Sprite2D" parent="."]
+texture = ExtResource("14_d5yhx")
+vframes = 20
+
+[node name="Player_0_13" type="Sprite2D" parent="."]
+texture = ExtResource("15_0rqhp")
+hframes = 9
+vframes = 4
+
+[node name="Player_0_14" type="Sprite2D" parent="."]
+texture = ExtResource("16_iqsdw")
+vframes = 3

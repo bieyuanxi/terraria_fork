@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://csi3e7my86tpt"]
 
-[ext_resource type="Texture2D" uid="uid://bmar0i6kytbqj" path="res://assets/terraria/Item_547.png" id="1_wn6p5"]
+[ext_resource type="Texture2D" uid="uid://c8364k4k8subm" path="res://assets/terraria/Item_547.png" id="1_wn6p5"]
 [ext_resource type="Script" path="res://scenes/items/item_547.gd" id="2_f3034"]
 [ext_resource type="Script" path="res://scripts/resources/item_resource/item_data_res.gd" id="3_rraev"]
 

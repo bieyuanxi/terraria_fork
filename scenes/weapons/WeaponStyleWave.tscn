@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://d05wcc4rwvnpa"]
+
+[ext_resource type="PackedScene" uid="uid://b6ykdwyru0vt2" path="res://scenes/player/composite_player.tscn" id="1_u2qx0"]
+[ext_resource type="Texture2D" uid="uid://ds0w88ch8ipmb" path="res://assets/terraria/Item_1.png" id="2_1b04a"]
+
+[sub_resource type="Animation" id="Animation_025hd"]
+resource_name = "wave"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, -27), Vector2(19, -17), Vector2(25, 7), Vector2(19, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.785398, 0.0, 0.785398, 1.39626]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CompositePlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"wave"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pn08u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, -27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_giyv2"]
+_data = {
+"RESET": SubResource("Animation_pn08u"),
+"wave": SubResource("Animation_025hd")
+}
+
+[node name="WeaponStyleWave" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_giyv2")
+}
+autoplay = "wave"
+
+[node name="CompositePlayer" parent="." instance=ExtResource("1_u2qx0")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(-5, -27)
+rotation = -0.785398
+scale = Vector2(1, 1)
+texture = ExtResource("2_1b04a")
+
+[node name="Camera2D" type="Camera2D" parent="."]

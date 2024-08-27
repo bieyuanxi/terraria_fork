@@ -29,12 +29,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	if velocity.x > 0:
+		composite_player.scale.x = 1
+	elif velocity.x < 0:
+		composite_player.scale.x = -1
+
 	if not is_on_floor():
 		composite_player.fall()
-	elif velocity.x > 0:
-		composite_player.move(true)
-	elif velocity.x < 0:
-		composite_player.move(false)
+	elif velocity.x != 0:
+		composite_player.move()
 	else:
 		composite_player.idle()
 	

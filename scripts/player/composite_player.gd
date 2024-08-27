@@ -26,11 +26,7 @@ func wave():
 	wave_animation_player.play("wave")
 	
 	
-func move(flip: bool):
-	if flip:
-		scale.x = 1
-	else:
-		scale.x = -1
+func move():
 	animation_player.play("move")
 
 
